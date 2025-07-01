@@ -5,82 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Helio Health - IS/IT/HIT/Data Help Desk</title>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-	<style>
-		body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Ubuntu', Arial, sans-serif;
-    background-color: #FFFFFF; /* White */
-    color: #000000;
-}
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Ubuntu', Arial, sans-serif;
+            background-color: #FFFFFF; /* White */
+            color: #000000;
+        }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    align-items: center;
-}
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            align-items: center;
+        }
 
-.logo-header {
-    background-color: #FFFFFF;
-    width: 300px;
-    text-align: center;
-    padding: 20px 0;
-}
+        .logo-header {
+            background-color: #FFFFFF;
+            width: 300px;
+            text-align: center;
+            padding: 20px 0;
+        }
 
-.logo {
-    max-width: 200px; /* Adjust the size as needed */
-}
+        .logo {
+            max-width: 200px; /* Adjust the size as needed */
+        }
 
-.header {
-    background-color: #FF6600; /* 1585 Pantone */
-    width: 100%;
-    text-align: center;
-    padding: 20px 0;
-}
+        .header {
+            background-color: #FF6600; /* 1585 Pantone */
+            width: 100%;
+            text-align: center;
+            padding: 20px 0;
+            position: relative; /* Needed for absolute positioning */
+        }
 
-.contact-info h1 {
-    color: #FFFFFF; /* White text */
-    margin: 0;
-}
+        .contact-info h1 {
+            color: #FFFFFF; /* White text */
+            margin: 0;
+        }
 
-.contact-info p {
-    color: #FFFFFF; /* White text */
-    margin: 10px 0;
-}
+        .contact-info p {
+            color: #FFFFFF; /* White text */
+            margin: 10px 0;
+        }
 
-.contact-info a {
-    color: #FFFFFF; /* White text */
-    text-decoration: underline;
-}
+        .contact-info a {
+            color: #FFFFFF; /* White text */
+            text-decoration: underline;
+        }
 
-.contact-info .btn {
-    background-color: #FFFFFF; /* White background */
-    color: #000000; /* Black text */
-    padding: 10px 20px;
-    border: 2px solid #000000; /* Black border */
-    border-radius: 25px; /* Rounded corners */
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 1em;
-    cursor: pointer;
-}
+        .contact-info .btn {
+            background-color: #FFFFFF; /* White background */
+            color: #000000; /* Black text */
+            padding: 10px 20px;
+            border: 2px solid #000000; /* Black border */
+            border-radius: 25px; /* Rounded corners */
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
 
-.contact-info .btn:hover {
-    background-color: #ffa400; /* Light grey background on hover */
-}
+        .contact-info .btn:hover {
+            background-color: #ffa400; /* Light grey background on hover */
+        }
 
-.example-image {
-	max-width: 300px;
-}
+        .example-image-container {
+            position: relative;
+            max-width: 300px;
+            margin: 0 auto; /* Center the image */
+            /* This is the container for the image */
+            overflow: hidden; /* Ensures the text doesn't overflow the container */
+            border: 2px solid #000000; /* Black border */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            background-color: #FFFFFF; /* White background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-#redirect-message {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #FFFFFF; /* White text */
-}
-	</style>
+        .example-image {
+            width: 100%;
+            display: block;
+        }
+
+        .example-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            color: rgba(100, 100, 100, 0.9); /* Translucent dark grey */
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        #redirect-message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #FFFFFF; /* White text */
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -95,30 +122,32 @@
                 <a class="btn" href="https://heliohealth.myportallogin.com">Access Managed Solutions Support Portal</a>
                 <p id="redirect-message">You will be automatically redirected in <span id="countdown">30</span> seconds.</p>
             </div>
-	    <a href="https://heliohealth.myportallogin.com"><img class "example-image" src="https://helpdesk.helio.health/ManSolButton.png" width="50%"></a>
-		<br><br><br>
-		<hr>
-		<strong>If you are unable to login to the portal please call the Support Line: (315) 671-3480.</strong>
-		<hr>
+            <div class="example-image-container">
+                <a href="https://heliohealth.myportallogin.com"><img class="example-image" src="https://helpdesk.helio.health/ManSolButton.png" alt="Example Image"></a>
+                <div class="example-text">EXAMPLE</div>
+            </div>
+            <br><br><br>
+            <hr>
+            <strong>If you are unable to login to the portal please call the Support Line: (315) 671-3480.</strong>
+            <hr>
         </header>
     </div>
     <script>
-	document.addEventListener("DOMContentLoaded", function() {
-    var countdownElement = document.getElementById('countdown');
-    var countdown = 30;
+        document.addEventListener("DOMContentLoaded", function() {
+            var countdownElement = document.getElementById('countdown');
+            var countdown = 30;
 
-    function updateCountdown() {
-        if (countdown > 0) {
-            countdown--;
-            countdownElement.textContent = countdown;
-        } else {
-            window.location.href = 'https://heliohealth.myportallogin.com';
-        }
-    }
+            function updateCountdown() {
+                if (countdown > 0) {
+                    countdown--;
+                    countdownElement.textContent = countdown;
+                } else {
+                    window.location.href = 'https://heliohealth.myportallogin.com';
+                }
+            }
 
-    setInterval(updateCountdown, 1000);
-});
-
-	</script>
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
 </body>
 </html>
