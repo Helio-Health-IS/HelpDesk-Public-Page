@@ -215,11 +215,11 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var countdownElement = document.getElementById('countdown');
-            var showOutage = false; // Change to true to show the outage alert
-            var outageDate = new Date('2025-10-07T15:30:00'); // Set the outage start date and time
-            var outageTitle = "Service Outage";
-            var currentOutage = "OrderConnect Down for all locations";
-            var outageDetails = "We are currently investigating the issue and will provide updates as soon as possible.";
+            var showOutage = true; // Change to true to show the outage alert
+            var outageDate = new Date('2025-10-29T12:30:00'); // Set the outage start date and time
+            var outageTitle = "Temporary Issues with Microsoft 365 Services";
+            var currentOutage = "Microsoft 365 Service Issue";
+            var outageDetails = "<p>Microsoft is experiencing a service issue that may affect access to Microsoft 365 services.</p><ul><li>Delays or difficulties accessing Microsoft 365 services</li><li>Possible Outlook add-in and connectivity issues</li></ul><p><strong>No action required.</strong> Microsoft is working to resolve the problem.</p><p><em>We will provide updates as available.</em></p>";
 
             // Populate outage details if the outage is to be shown
             if (showOutage) {
@@ -259,3 +259,4 @@
     </script>
 </body>
 </html>
+
