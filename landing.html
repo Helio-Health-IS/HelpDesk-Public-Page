@@ -263,6 +263,62 @@
             color: #FFFFFF;
         }
 
+        /* Scroll Down Button Styles */
+        .scroll-down-container {
+            display: flex;
+            justify-content: center;
+            margin: 15px auto 0;
+            max-width: 1200px;
+        }
+
+        .scroll-down-btn {
+            display: none; /* Hidden by default */
+            background-color: #FF6600;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 24px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .scroll-down-btn:hover {
+            background-color: #E55A00;
+            transform: translateY(2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .scroll-down-btn:active {
+            transform: translateY(4px);
+        }
+
+        .scroll-down-btn.show {
+            display: inline-flex;
+        }
+
+        .scroll-down-btn svg {
+            width: 20px;
+            height: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(8px);
+            }
+            60% {
+                transform: translateY(4px);
+            }
+        }
+
         /* Avatar Issues Section Styles */
         .avatar-issues {
             background-color: #FFFFFF;
@@ -685,10 +741,18 @@
                 </div>
             </section>
         </div>
+        <div class="scroll-down-container">
+            <button type="button" class="scroll-down-btn" id="scrollDownBtn" aria-label="Scroll down to see more content">
+                This didn't fix my issue, I need more help!
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </button>
+        </div>
         <!-- Avatar Issues Highlighted Section -->
           <section class="section avatar-issues" aria-labelledby="avatar-issues-title">
             <h2 id="avatar-issues-title">Avatar Issues</h2>
-                <p>Experiencing issues in Avatar (e.g., missing forms, missing reports, need to delete last movement, etc)? Please contact a designated Super User first for rapid assistance before opening a Help Desk ticket.</p>
+                <p>Experiencing issues in Avatar (e.g., Final to Draft Override, Move Selected Data, Progress Note Corrections, Approve Override, Treatment Plan Status Override, Treatment Plan Deletion, etc)? Please contact a designated Super User first for rapid assistance before opening a Help Desk ticket.</p>
                 <p><strong>Step 1:</strong> Find your operational area below and email one of the listed Super Users.<br />
                     <strong>Step 2:</strong> If there is no response, or the matter is critical to client care, submit a Help Desk ticket.</p>
             <div class="super-user-grid" aria-label="Super user contacts by business area">
@@ -945,9 +1009,13 @@
             
             // Initial check
             checkOutageStatus();
+            updateScrollButtonVisibility();
             
             // Check every 5 minutes for outage status changes
-            setInterval(checkOutageStatus, 5 * 60 * 1000);
+            setInterval(function() {
+                checkOutageStatus();
+                updateScrollButtonVisibility();
+            }, 5 * 60 * 1000);
 
             // Maintenance Management System
             var maintenanceItems = [
@@ -1048,8 +1116,37 @@
             // Initial check
             checkMaintenanceStatus();
             
+            // Function to update scroll button visibility
+            function updateScrollButtonVisibility() {
+                var scrollBtn = document.getElementById('scrollDownBtn');
+                var outageAlert = document.querySelector('.outage-alert');
+                var maintenanceAlert = document.querySelector('.maintenance-alert');
+                
+                if (!scrollBtn) return;
+                
+                // Show button if either alert is visible
+                var shouldShow = (!outageAlert.hidden) || (!maintenanceAlert.hidden);
+                
+                if (shouldShow) {
+                    scrollBtn.classList.add('show');
+                } else {
+                    scrollBtn.classList.remove('show');
+                }
+            }
+            
+            // Scroll button click handler
+            document.getElementById('scrollDownBtn').addEventListener('click', function() {
+                var avatarSection = document.querySelector('.avatar-issues');
+                if (avatarSection) {
+                    avatarSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+            
             // Check every 5 minutes for maintenance status changes
-            setInterval(checkMaintenanceStatus, 5 * 60 * 1000);
+            setInterval(function() {
+                checkMaintenanceStatus();
+                updateScrollButtonVisibility();
+            }, 5 * 60 * 1000);
 
             // FAQ Accordion functionality
             var faqItems = document.querySelectorAll('.faq-item');
