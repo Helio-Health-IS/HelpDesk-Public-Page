@@ -1134,14 +1134,6 @@
                 }
             }
             
-            // Scroll button click handler
-            document.getElementById('scrollDownBtn').addEventListener('click', function() {
-                var avatarSection = document.querySelector('.avatar-issues');
-                if (avatarSection) {
-                    avatarSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-            
             // Check every 5 minutes for maintenance status changes
             setInterval(function() {
                 checkMaintenanceStatus();
@@ -1151,6 +1143,7 @@
             // FAQ Accordion functionality
             var faqItems = document.querySelectorAll('.faq-item');
             var collapseTimers = new Map();
+            var isScrolling = false; // Track if auto-scroll is active
             
             faqItems.forEach(function(item) {
                 var question = item.querySelector('.faq-question');
@@ -1194,6 +1187,9 @@
                 
                 // Add hover functionality
                 item.addEventListener('mouseenter', function() {
+                    // Don't trigger hover during auto-scroll
+                    if (isScrolling) return;
+                    
                     // Clear any pending collapse timer when mouse enters
                     if (collapseTimers.has(item)) {
                         clearTimeout(collapseTimers.get(item));
@@ -1226,6 +1222,7 @@
                 function easeInOutQuad(t){ return t < 0.5 ? 2*t*t : -1 + (4 - 2*t) * t; }
 
                 function smoothScrollTo(targetEl, duration){
+                    isScrolling = true; // Set scroll state
                     var startY = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
                     var targetRect = targetEl.getBoundingClientRect();
                     var targetY = targetRect.top + startY;
@@ -1241,6 +1238,7 @@
                         if(elapsed < duration){
                             window.requestAnimationFrame(step);
                         } else {
+                            isScrolling = false; // Clear scroll state when done
                             var ctaBtn = document.getElementById('cta-button');
                             if(ctaBtn) ctaBtn.focus();
                         }
@@ -1268,6 +1266,15 @@
                         scrollToCTA();
                     });
                 });
+
+                // Attach scroll handler to the scroll down button
+                var scrollDownBtn = document.getElementById('scrollDownBtn');
+                if (scrollDownBtn) {
+                    scrollDownBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        scrollToCTA();
+                    });
+                }
             })();
         });
     </script>
