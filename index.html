@@ -727,11 +727,11 @@
         </header>
         <div class="alerts-container">
             <section class="outage-alert" role="status" aria-live="assertive" aria-atomic="true" hidden>
-                <h2>Netsmart Outage</h2>
+                <h2></h2>
                 <div class="outage-item">
-                    <div class="outage-date">March 9th, 2026</div>
-                    <div class="outage-description">We are currently experiencing an outage with Netsmart.</div>
-                    <div class="outage-details">Our IT Teams are aware and there is no need to submit a ticket for Netsmart issues at this time. There is currently no ETA at this time. For all other issues, please submit an IT Ticket.</div>
+                    <div class="outage-date"></div>
+                    <div class="outage-description"></div>
+                    <div class="outage-details"></div>
                 </div>
             </section>
             <section class="maintenance-alert" role="status" aria-live="polite" aria-atomic="true" hidden>
@@ -884,6 +884,13 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Outage Management System
             var outageItems = [
+                {
+                    title: "Netsmart Outage",
+                    description: "We are currently experiencing an outage with Netsmart",
+                    details: "Our IT Teams are aware and there is no need to submit a ticket for Netsmart issues at this time. There is currently no ETA at this time. For all other issues, please submit an IT Ticket.",
+                    startDate: new Date('2025-3/9/26T07:00:00'),
+                    endDate: new Date('2025-3/21/26T10:25:00')
+                },                
                 {
                     title: "Email Service Disruption",
                     description: "Users may experience delays in sending/receiving emails.",
@@ -1280,6 +1287,7 @@
     </script>
 </body>
 </html>
+
 
 
 
