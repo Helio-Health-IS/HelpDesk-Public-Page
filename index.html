@@ -966,11 +966,11 @@
                 
                 // Show or hide the outage alert
                 if (relevantOutages.length === 0) {
-                    outageAlert.hidden = false;
+                    outageAlert.hidden = true;
                     return;
                 }
                 
-                outageAlert.hidden = true;
+                outageAlert.hidden = fslse;
                 
                 // Determine if any are active
                 var hasActiveOutage = relevantOutages.some(function(item) {
@@ -1288,6 +1288,7 @@
     </script>
 </body>
 </html>
+
 
 
 
