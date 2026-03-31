@@ -835,7 +835,7 @@
             <section class="outage-alert" role="status" aria-live="assertive" aria-atomic="true" hidden>
                 <h2></h2>
                 <div class="outage-item">
-                    <div class="outage-date"></div>
+                    <div class="outage-date">
                     <div class="outage-description"></div>
                     <div class="outage-details"></div>
                 </div>
@@ -1018,6 +1018,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             // Outage Management System
             var outageItems = [
+                           
                 {
                     title: "Email Service Disruption",
                     description: "Users may experience delays in sending/receiving emails.",
@@ -1031,7 +1032,22 @@
                     details: "The IS staff is working with the vendor to resolve the issue.",
                     startDate: new Date('2025-12-17T12:30:00'),
                     endDate: new Date('2026-01-07T12:30:00')
-                }
+                },
+                {
+                    title: " issue affecting Microsoft 365 Teams and Outlook",
+                    description: "We've received reports of an issue affecting Microsoft 365 services, including Teams and Outlook.",
+                    details: "We will keep everyone appraised of any updates.",
+                    startDate: new Date('2026-01-21T12:30:00'),
+                    endDate: new Date('2026-01-21T15:00:00')
+                },
+                {
+                    title: "service outage that is affecting wireless/internet service at multiple sites",
+                    description: "Current Status:Issue identified: Radius Server not allowing logins. Impact: Employees may have difficulty utilizing Helio_Radius and general internet connectivity. Status: We are currently investigating and will move to resolution as soon as the issue has been identified.",
+                    details: "At this time, there is no action required from users unless otherwise directed. We will continue to provide updates as progress is made and will notify you once services are fully restored.",
+                    startDate: new Date('2026-02-26T01:30:00'),
+                    endDate:  new Date('2026-02-26T13:10:00')
+                }, 
+                
                 // Add more outage items here as needed
                 // {
                 //     title: "Network Issue",
@@ -1081,8 +1097,7 @@
                     outageAlert.hidden = true;
                     return;
                 }
-                
-                outageAlert.hidden = false;
+                outageAlert.hidden = true;
                 
                 // Determine if any are active
                 var hasActiveOutage = relevantOutages.some(function(item) {
@@ -1400,3 +1415,38 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
