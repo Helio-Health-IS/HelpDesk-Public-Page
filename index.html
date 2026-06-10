@@ -400,6 +400,68 @@
             font-weight: bold;
         }
 
+        .smart-care-issues .docs-title {
+            margin: 20px 0 10px 0;
+            color: #FF6600;
+            font-size: 1.15em;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .smart-care-issues .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .smart-care-issues .doc-link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #FFF5EE;
+            color: #000000;
+            border: 2px solid #FF6600;
+            border-radius: 10px;
+            padding: 10px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            line-height: 1.3;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .smart-care-issues .doc-link-btn:hover {
+            background-color: #FFE6D6;
+            color: #000000;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .smart-care-issues .doc-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 34px;
+            height: 22px;
+            border-radius: 5px;
+            font-size: 0.72em;
+            font-weight: bold;
+            letter-spacing: 0.3px;
+            color: #FFFFFF;
+            background-color: #6B6B6B;
+            flex: 0 0 auto;
+        }
+
+        .smart-care-issues .doc-icon.pdf {
+            background-color: #C62828;
+        }
+
+        .smart-care-issues .doc-icon.link {
+            background-color: #5A5A5A;
+        }
+
         .smart-care-issues .steps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -427,7 +489,62 @@
             line-height: 1.5;
         }
 
-        .smart-care-issues .step-card img {
+        .smart-care-issues .step-card ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+
+        .smart-care-issues .step-card li {
+            margin: 8px 0;
+            line-height: 1.45;
+        }
+
+        .smart-care-issues .support-links {
+            list-style: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+        }
+
+        .smart-care-issues .support-links li {
+            margin: 8px 0;
+        }
+
+        .smart-care-issues .support-links a {
+            display: inline-block;
+        }
+
+        .smart-care-issues .teams-channel-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #5059C9;
+            color: #FFFFFF;
+            border: 2px solid #3C45A5;
+            border-radius: 10px;
+            padding: 10px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            line-height: 1.3;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .smart-care-issues .teams-channel-btn:hover {
+            background-color: #4049B0;
+            color: #FFFFFF;
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .smart-care-issues .teams-channel-icon {
+            width: 1em;
+            height: 1em;
+            flex: 0 0 1em;
+            object-fit: contain;
+        }
+
+        .smart-care-issues .step-card > img {
             width: 100%;
             height: auto;
             border: 2px solid #000000;
@@ -857,26 +974,60 @@
         </div>
         <!-- SmartCare issues -->
         <section class="section smart-care-issues" aria-labelledby="smart-care-issues-title">
-            <h2 id="smart-care-issues-title">SmartCare Issues</h2>
-            <p>For SmartCare issues, please submit a ticket through the Help Desk portal.</p>
-            <p class="steps-title">How to Submit a SmartCare Ticket</p>
-            <div class="steps-grid" aria-label="SmartCare ticket submission steps">
+            <h2 id="smart-care-issues-title">SmartCare Support</h2>
+            <p>For SmartCare help, start with your SuperUser Teams channel for questions, guidance, and workflow clarification.</p>
+            <p class="docs-title">SmartCare Documentation</p>
+            <div class="docs-grid" aria-label="SmartCare documentation links">
+                <a href="https://heliohealth.sharepoint.com/sites/HelioHea/HowTos/Forms/Grouped_By_Category.aspx?id=%2Fsites%2FHelioHea%2FHowTos%2FHH%2DIS%2DHWT%2D0058%20%2D%20Medical%20SmartCare%20FAQs%2Epdf&parent=%2Fsites%2FHelioHea%2FHowTos" class="doc-link-btn" target="_blank" rel="noopener noreferrer">
+                    <span class="doc-icon pdf" aria-hidden="true">PDF</span>
+                    <span>Medical FAQs</span>
+                </a>
+                <a href="https://heliohealth.sharepoint.com/sites/HelioHea/Agency%20Procedure%20Library/Forms/Workflow.aspx?CT=1780923005248&OR=OWA%2DNT%2DMail&CID=a479dcfa%2D749e%2De9bb%2De1b4%2Dadcac6c99ab6&SI=NonSentItems&clickParams=eyJYLUFwcE5hbWUiOiJNaWNyb3NvZnQgT3V0bG9vayBXZWIgQXBwIiwiWC1BcHBWZXJzaW9uIjoiMjAyNjA1MjkwMTQuMTIiLCJPUyI6IldpbmRvd3MgMTEifQ%3D%3D" class="doc-link-btn" target="_blank" rel="noopener noreferrer">
+                    <span class="doc-icon link" aria-hidden="true">LINK</span>
+                    <span>SmartCare Workflows by Division</span>
+                </a>
+                <a href="https://heliohealth.sharepoint.com/sites/HelioHea/HowTos/Forms/Grouped_By_Category.aspx?id=%2Fsites%2FHelioHea%2FHowTos%2FHH%2DIS%2DHWT%2D0019%20%2D%20SmartCare%20Training%20Manual%2Epdf&parent=%2Fsites%2FHelioHea%2FHowTos" class="doc-link-btn" target="_blank" rel="noopener noreferrer">
+                    <span class="doc-icon pdf" aria-hidden="true">PDF</span>
+                    <span>SmartCare User Guide</span>
+                </a>
+                <a href="https://heliohealth.sharepoint.com/sites/HelioHea/HowTos/Forms/Grouped_By_Category.aspx?FilterField1=Category&FilterValue1=SmartCare&FilterType1=Choice&FilterDisplay1=SmartCare&viewid=68a2d62a%2Dbb95%2D4da3%2D9ad5%2D5712d3e24b86&newTargetListUrl=%2Fsites%2FHelioHea%2FHowTos&viewpath=%2Fsites%2FHelioHea%2FHowTos%2FForms%2FGrouped%5FBy%5FCategory%2Easpx&CT=1780923148309&OR=OWA%2DNT%2DMail&CID=2f889bf8%2D2d4f%2Dc51e%2D0e8b%2D5ac3b43f1a2a&SI=NonSentItems&clickParams=eyJYLUFwcE5hbWUiOiJNaWNyb3NvZnQgT3V0bG9vayBXZWIgQXBwIiwiWC1BcHBWZXJzaW9uIjoiMjAyNjA1MjkwMTQuMTIiLCJPUyI6IldpbmRvd3MgMTEifQ%3D%3D" class="doc-link-btn" target="_blank" rel="noopener noreferrer">
+                    <span class="doc-icon link" aria-hidden="true">LINK</span>
+                    <span>SmartCare How-To's</span>
+                </a>
+            </div>
+            <p class="steps-title">How SmartCare Support Works</p>
+            <div class="steps-grid" aria-label="SmartCare support steps">
                 <div class="step-card">
-                    <h3>Step 1: Go to Help Desk Portal</h3>
-                    <p>Click the <strong>Go to Help Desk Portal</strong> button below to open the ticket page.</p>
+                    <h3>Step 1: Contact Your SuperUser Teams Channel</h3>
+                       <p>Use SuperUser support first for:</p>
+                    <ul>
+                        <li>Workflow questions</li>
+                        <li>Guidance on documentation steps</li>
+                        <li>Clarification on process and best practice</li>
+                    </ul>
+                    <p>Use your program-specific SuperUser channel first:</p>
+                    <ul class="support-links" aria-label="SmartCare SuperUser Teams channels">
+                        <li><a href="https://teams.microsoft.com/l/channel/19%3A783e2e56a6dc44cd94ff9932d2a7637a%40thread.skype/In-Community%20SuperUser%20Support?groupId=abb4eabe-face-404b-9b1c-e398bf8ccd0c&tenantId=e25b5117-2f32-4b3e-b285-85dab9919d6d" class="teams-channel-btn" target="_blank" rel="noopener noreferrer"><img src="microsoft-teams.png" alt="" class="teams-channel-icon" aria-hidden="true">In-Community SuperUser Support</a></li>
+                        <li><a href="https://teams.microsoft.com/l/channel/19%3A2d8681d677a9456eb41f732183658b16%40thread.skype/Inpatient%20SuperUser%20Support?groupId=abb4eabe-face-404b-9b1c-e398bf8ccd0c&tenantId=e25b5117-2f32-4b3e-b285-85dab9919d6d" class="teams-channel-btn" target="_blank" rel="noopener noreferrer"><img src="microsoft-teams.png" alt="" class="teams-channel-icon" aria-hidden="true">Inpatient SuperUser Support</a></li>
+                        <li><a href="https://teams.microsoft.com/l/channel/19%3A6bb6d553ee0b46e79e65c1e2ba589bdc%40thread.skype/Outpatient%20SuperUser%20Support?groupId=abb4eabe-face-404b-9b1c-e398bf8ccd0c&tenantId=e25b5117-2f32-4b3e-b285-85dab9919d6d" class="teams-channel-btn" target="_blank" rel="noopener noreferrer"><img src="microsoft-teams.png" alt="" class="teams-channel-icon" aria-hidden="true">Outpatient SuperUser Support</a></li>
+                        <li><a href="https://teams.microsoft.com/l/channel/19%3A5686b9a3ada14e7ea0eecca987b4b70e%40thread.skype/Residential%20SuperUser%20Support?groupId=abb4eabe-face-404b-9b1c-e398bf8ccd0c&tenantId=e25b5117-2f32-4b3e-b285-85dab9919d6d" class="teams-channel-btn" target="_blank" rel="noopener noreferrer"><img src="microsoft-teams.png" alt="" class="teams-channel-icon" aria-hidden="true">Residential SuperUser Support</a></li>
+                        <li><a href="https://teams.microsoft.com/l/channel/19%3A86e60010ede94ce39c0d1d8ca0a3c88f%40thread.skype/RCM%20SuperUser%20Support?groupId=abb4eabe-face-404b-9b1c-e398bf8ccd0c&tenantId=e25b5117-2f32-4b3e-b285-85dab9919d6d" class="teams-channel-btn" target="_blank" rel="noopener noreferrer"><img src="microsoft-teams.png" alt="" class="teams-channel-icon" aria-hidden="true">RCM SuperUser Support</a></li>
+                        <li><a href="https://teams.microsoft.com/l/channel/19%3Ad30e8ff08fa544b0b9104b8a69866d33%40thread.skype/Medical%20Super%20User%20Support?groupId=abb4eabe-face-404b-9b1c-e398bf8ccd0c&tenantId=e25b5117-2f32-4b3e-b285-85dab9919d6d" class="teams-channel-btn" target="_blank" rel="noopener noreferrer"><img src="microsoft-teams.png" alt="" class="teams-channel-icon" aria-hidden="true">Medical SuperUser Support</a></li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <h3>Step 2: Use IT Service Desk for True System Issues</h3>
+                    <p>Submit an IT Service Desk ticket only for system-level problems such as:</p>
+                    <ul>
+                        <li>System errors or outages</li>
+                        <li>Access failures or login issues</li>
+                        <li>Technical functionality not working as expected</li>
+                    </ul>
                     <div class="help-actions">
-                        <a href="https://helpdesk.helio.health/go" class="smart-care-btn" role="button" aria-label="Open Help Desk portal for SmartCare issues">Go to Help Desk Portal</a>
+                        <a href="https://helpdesk.helio.health/go" class="smart-care-btn" role="button" aria-label="Open IT Service Desk portal for SmartCare system issues">Go to IT Service Desk</a>
                     </div>
                 </div>
-                <div class="step-card">
-                    <h3>Step 2: Click Submit Ticket</h3>
-                    <img src="Submit.png" alt="Help Desk form showing the submit action for the SmartCare ticket" />
-                </div>
-                <div class="step-card">
-                    <h3>Step 3: Select Category</h3>
-                    <img src="select-category.png" alt="Help Desk form showing category selection for SmartCare ticket" />
-                    <p>Ensure <strong>My SmartCare</strong> is selected for SmartCare issues.</p>
-                </div>
+                
             </div>
             <div class="help-cta">
                 <button type="button" class="btn help-btn" aria-label="Scroll to Submit a Help Desk Ticket">Not a SmartCare issue? Look at other resources below.</button>
